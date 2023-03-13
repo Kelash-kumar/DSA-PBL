@@ -2,24 +2,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    Main() {
-        ReadCsvFile.add_Keys_by_province();
-    }
+    Main() { ReadCsvFile.add_Keys_by_province();}
 
     static ArrayList<String> Sindh = new ArrayList<>();
     static ArrayList<String> Punjab = new ArrayList<>();
     static ArrayList<String> Balochistan = new ArrayList<>();
     static ArrayList<String> KPK = new ArrayList<>();
-
+    static ArrayList<String> AJK = new ArrayList<>();
+    static ArrayList<String> Gilgit = new ArrayList<>();
+    
     public static void main(String[] args) {
-        // Main main=new Main();
-
-        Stack_Universities su = new Stack_Universities();
-        Stack_Universities su1 = new Stack_Universities();
+        Problem_02 prblm2=new Problem_02();
         Scanner sc = new Scanner(System.in);
+        while(true){
         System.out.println("\n\n\n == >  Enter your choice <== ");
         System.out.println(
-                " 1. search A university by providing (key) \n 2.  Top n universties with orderby \n 3. Bottom n University with orderBy   \n 4. Top universities by province ");
+                " 1. search A university by providing (key) \n 2.  Top n universties with orderby \n 3. Bottom n University with orderBy   \n 4.  See provincial ranking of the universities \n 5. Best And Worst Performance \n 6.Exit ");
         int input = sc.nextInt();
 
         switch (input) {
@@ -36,24 +34,24 @@ public class Main {
                 System.out.println("Enter (n)  HowMany TOP  University data You Searched :");
                 int i = sc.nextInt();
                 System.out.println("Enter on what basis : your choice");
-                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. Word rank \n 4. Asia Rank");
+                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. World rank \n 4. Asia Rank");
                 int orderby = sc.nextInt();
 
                 switch (orderby) {
                     case 1: {
-                        su.Top_n_UniversityBy("numberofpublication", i);
+                        prblm2.Top_n_UniversityBy("numberofpublication", i);
                         break;
                     }
                     case 2: {
-                        su.Top_n_UniversityBy("pakistanRank", i);
+                        prblm2.Top_n_UniversityBy("pakistanRank", i);
                         break;
                     }
                     case 3: {
-                        su.Top_n_UniversityBy("WorldRank", i);
+                        prblm2.Top_n_UniversityBy("WorldRank", i);
                         break;
                     }
                     case 4: {
-                        su.Top_n_UniversityBy("AsiaRank", i);
+                        prblm2.Top_n_UniversityBy("AsiaRank", i);
                         break;
                     }
                     default: {
@@ -74,19 +72,19 @@ public class Main {
 
                 switch (orderby) {
                     case 1: {
-                        su.Bottom_n_UniversityBy("numberofpublication", i);
+                        prblm2.Bottom_n_UniversityBy("numberofpublication", i);
                         break;
                     }
                     case 2: {
-                        su.Bottom_n_UniversityBy("pakistanRank", i);
+                        prblm2.Bottom_n_UniversityBy("pakistanRank", i);
                         break;
                     }
                     case 3: {
-                        su.Bottom_n_UniversityBy("WorldRank", i);
+                        prblm2.Bottom_n_UniversityBy("WorldRank", i);
                         break;
                     }
                     case 4: {
-                        su.Bottom_n_UniversityBy("AsiaRank", i);
+                        prblm2.Bottom_n_UniversityBy("AsiaRank", i);
                         break;
                     }
                     default: {
@@ -100,24 +98,39 @@ public class Main {
                 System.out.println("Enter (n)  HowMany Top  University data You Searched by provinced wise :");
                 int i = sc.nextInt();
                 System.out.println("Enter on what province basis : your choice");
-                System.out.println(" 1. Sindh \n 2. Punjab \n 3. Balochistan \n 4. KPK");
+                System.out.println(
+                        " 1. Sindh \n 2. Punjab \n 3. Balochistan \n 4. KPK \n 5. AJK  \n 6. Gilgit Biltistan");
                 int orderby = sc.nextInt();
 
                 switch (orderby) {
                     case 1: {
-                        su.Top_n_Sindh_Universities("sindh", i);
+                        Stack_Universities.Top_n_Sindh_Universities("sindh", i);
+                        System.exit(0);
                         break;
                     }
                     case 2: {
-                        su.Top_n_Punjab_Universities("punjab", i);
+                        Stack_Universities.Top_n_Punjab_Universities("punjab", i);
+                        System.exit(0);
                         break;
                     }
                     case 3: {
-                        su.Top_n_Balochistan_Universities("Balochistan", i);
+                        Stack_Universities.Top_n_Balochistan_Universities("Balochistan", i);
+                        System.exit(0);
                         break;
                     }
                     case 4: {
-                        su.Top_n_KPK_Universities("KPK", i);
+                        Stack_Universities.Top_n_KPK_Universities("KPK", i);
+                        System.exit(0);
+                        break;
+                    }
+                    case 5: {
+                        Stack_Universities.Top_n_AJK_Universities("AJK", i);
+                        System.exit(0);
+                        break;
+                    }
+                    case 6: {
+                        Stack_Universities.Top_n_Gilgit_Universities("Gilgit Biltistan", i);
+                        System.exit(0);
                         break;
                     }
                     default: {
@@ -128,12 +141,16 @@ public class Main {
 
                 break;
             }
-
+            case 5: {
+                System.out.println("\n"+Problem_03. performance());
+                break;
+            }
+            case 6:{System.exit(0);}
             default: {
                 System.out.println("not exist");
                 break;
             }
         }
-
+    }
     }
 }

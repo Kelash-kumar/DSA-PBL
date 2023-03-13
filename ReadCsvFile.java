@@ -4,15 +4,12 @@ import java.io.IOException;
 import java.util.*;
 
   class  ReadCsvFile {
- 
+     static  Pakistani_Universities[] pakis_univrsty_Obj = new Pakistani_Universities[100];// array which store the 100 object of pakistani universites
+     static String[] Universities = new String[100];  // this array file store the data from csv file
+     static String[] UniversitiesKeys = new String[100];  // this array file store the data from csv file
+     public static Hashtable<String, Pakistani_Universities> pakis_univ_HashTable = new Hashtable<>();  // hashtable use for storing the key and object of pakistani unverites
 
-  static  Pakistani_Universities[] pakis_univrsty_Obj = new Pakistani_Universities[100];// array which store the 100 object of pakistani universites
-   static String[] Universities = new String[100];  // this array file store the data from csv file
-   static String[] UniversitiesKeys = new String[100];  // this array file store the data from csv file
-    public static Hashtable<String, Pakistani_Universities> pakis_univ_HashTable = new Hashtable<>();  // hashtable use for storing the key and object of pakistani unverites
-
-
-public static void ReadCvs_File() {
+     public static void ReadCvs_File() {
     
     try (BufferedReader bf = new BufferedReader(
         new FileReader("C:/Users/kelas//Desktop/DSA-PBL/Top 100 Unis of Pakistan.csv"))) {  //reading the csv file of universities data;
@@ -95,12 +92,13 @@ String provice=pakis_univ_HashTable.get(s).province.toString();
     Main.Balochistan.add(s);
    else if(provice.equalsIgnoreCase("KPK"))
     Main.KPK.add(s);
+   else if(provice.equalsIgnoreCase("AJK"))
+   Main.AJK.add(s);
+   else{
+      Main.Gilgit.add(s);
+    }
   }
 
 }
-public static void main(String[] args) {
   // Stack_Universities s=new Stack_Universities();
-  
-  
 }
-} 

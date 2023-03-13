@@ -18,8 +18,13 @@ public class Pakistani_Universities {
     }
 
     public String toString() {
-      
-        return " [" + this.Uni_Name + "]  [" + this.world_rank + "] [" + this.asia_rank
+        if(b){
+System.out.println("\n--------------------------------------------------------------------------------------------------------------");
+System.out.println("     UniversitesNames     \t\tWorldRank   AsiaRank   PakRank   city  province  numberOfPublication ");
+System.out.println("---------------------------------------------------------------------------------------------------------------\n");
+        }
+      b=false;
+        return " [ " + this.Uni_Name + "] [" + this.world_rank + "] [" + this.asia_rank
                 +"]  ["+ this.pakistan_rank + "] [" + this.city
                 +"] ["+ this.province + "] [" + this.Nubr_publication + "]";
     }

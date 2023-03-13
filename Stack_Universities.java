@@ -14,6 +14,8 @@ class Stack_Universities {
     static Stack_Universities punjab_Stack = new Stack_Universities();
     static Stack_Universities Balochistan_Stack = new Stack_Universities();
     static Stack_Universities KPK_Stack = new Stack_Universities();
+    static Stack_Universities AJK_Stack = new Stack_Universities();
+    static Stack_Universities GilgitB_Stack = new Stack_Universities();
 
     private static Node top;
     private static int size;
@@ -87,60 +89,60 @@ class Stack_Universities {
         }
     }
 
-    // bottom traverse:
-    public void Bottom_n_UniversityBy(String orderby, int n) {
-        if (orderby.equals("numberofpublication")) {
-            this.Add_uni_obj_into_stack_by_numberOfPublication();
-            for (int i = 0; i < n; i++)
-                System.out.println(university_stack_publication_array[i][0] + " "
-                        + ReadCsvFile.pakis_univ_HashTable.get(university_stack_publication_array[i][0]));
-        } else if (orderby.equals("WorldRank")) {
-            this.Add_uni_obj_into_stack_by_WorldRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(university_stack_WorldRank_array[i][0] + " "
-                        + ReadCsvFile.pakis_univ_HashTable.get(university_stack_WorldRank_array[i][0]));
+    // // bottom traverse:
+    // public void Bottom_n_UniversityBy(String orderby, int n) {
+    //     if (orderby.equals("numberofpublication")) {
+    //         this.Add_uni_obj_into_stack_by_numberOfPublication();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(university_stack_publication_array[i][0] + " "
+    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_publication_array[i][0]));
+    //     } else if (orderby.equals("WorldRank")) {
+    //         this.Add_uni_obj_into_stack_by_WorldRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(university_stack_WorldRank_array[i][0] + " "
+    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_WorldRank_array[i][0]));
 
-        } else if (orderby.equals("AsiaRank")) {
-            this.Add_uni_obj_into_stack_by_AsiaRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(university_stack_AsiaRank_array[i][0] + " "
-                        + ReadCsvFile.pakis_univ_HashTable.get(university_stack_AsiaRank_array[i][0]));
+    //     } else if (orderby.equals("AsiaRank")) {
+    //         this.Add_uni_obj_into_stack_by_AsiaRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(university_stack_AsiaRank_array[i][0] + " "
+    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_AsiaRank_array[i][0]));
 
-        } else if (orderby.equals("pakistanRank")) {
-            this.Add_uni_obj_into_stack_by_PakRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(university_stack_Pakrank_array[i][0] + " "
-                        + ReadCsvFile.pakis_univ_HashTable.get(university_stack_Pakrank_array[i][0]));
-        }
+    //     } else if (orderby.equals("pakistanRank")) {
+    //         this.Add_uni_obj_into_stack_by_PakRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(university_stack_Pakrank_array[i][0] + " "
+    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_Pakrank_array[i][0]));
+    //     }
 
-    }
+    // }
 
     // top traverse:
-    public void Top_n_UniversityBy(String orderby, int n) {
+    // public void Top_n_UniversityBy(String orderby, int n) {
 
-        if (orderby.equals("numberofpublication")) {
-            this.Add_uni_obj_into_stack_by_numberOfPublication();
-            for (int i = 0; i < n; i++)
-                System.out.println(this.peek() + " " + ReadCsvFile.pakis_univ_HashTable.get(this.pop().toString()));
-        }
+    //     if (orderby.equals("numberofpublication")) {
+    //         this.Add_uni_obj_into_stack_by_numberOfPublication();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(this.peek() + " " + ReadCsvFile.pakis_univ_HashTable.get(this.pop().toString()));
+    //     }
 
-        else if (orderby.equals("WorldRank")) {
-            this.Add_uni_obj_into_stack_by_WorldRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
+    //     else if (orderby.equals("WorldRank")) {
+    //         this.Add_uni_obj_into_stack_by_WorldRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
 
-        } else if (orderby.equals("AsiaRank")) {
-            this.Add_uni_obj_into_stack_by_AsiaRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
+    //     } else if (orderby.equals("AsiaRank")) {
+    //         this.Add_uni_obj_into_stack_by_AsiaRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
 
-        } else if (orderby.equals("pakistanRank")) {
-            this.Add_uni_obj_into_stack_by_PakRanked();
-            for (int i = 0; i < n; i++)
-                System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
-        }
+    //     } else if (orderby.equals("pakistanRank")) {
+    //         this.Add_uni_obj_into_stack_by_PakRanked();
+    //         for (int i = 0; i < n; i++)
+    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
+    //     }
 
-    }
+    // }
 
     public static void Add_keys_by_province(String provience) {
         Main main = new Main();
@@ -181,9 +183,31 @@ class Stack_Universities {
 
             }
         }
-    }
+        else if(provience.equals("AJK")){
+            for (int j = 0; j < university_stack_publication_array.length; j++) {
+                for (int i = 0; i < Main.AJK.size(); i++) {
+                    if (university_stack_publication_array[j][0].equalsIgnoreCase(Main.AJK.get(i)))
+                        AJK_Stack.push(university_stack_publication_array[j][0]);
+                }
 
-    public void Top_n_Sindh_Universities(String province, int n) {
+            }
+        }
+
+        else{
+            for (int j = 0; j < university_stack_publication_array.length; j++) {
+                for (int i = 0; i < Main.Gilgit.size(); i++) {
+                    if (university_stack_publication_array[j][0].equalsIgnoreCase(Main.Gilgit.get(i)))
+                        GilgitB_Stack.push(university_stack_publication_array[j][0]);
+                }
+
+            } 
+        }
+
+
+        }
+    
+
+    public static void Top_n_Sindh_Universities(String province, int n) {
         Add_keys_by_province(province);
         // add_sindh();
         if (n > sindh_Stack.size()) {
@@ -197,7 +221,7 @@ class Stack_Universities {
 
     }
 
-    public void Top_n_Punjab_Universities(String province, int n) {
+    public static void Top_n_Punjab_Universities(String province, int n) {
         Add_keys_by_province(province);
         if (n > punjab_Stack.size()) {
             System.out.println("sorry we have only " + punjab_Stack.size() + "records");
@@ -209,7 +233,7 @@ class Stack_Universities {
         }
     }
 
-    public void Top_n_Balochistan_Universities(String province, int n) {
+    public static void Top_n_Balochistan_Universities(String province, int n) {
         Add_keys_by_province(province);
         if (n > Balochistan_Stack.size()) {
             System.out.println("sorry we have only " + Balochistan_Stack.size() + "records");
@@ -221,7 +245,7 @@ class Stack_Universities {
         }
     }
 
-    public void Top_n_KPK_Universities(String province, int n) {
+    public static void Top_n_KPK_Universities(String province, int n) {
         Add_keys_by_province(province);
         if (n > KPK_Stack.size()) {
             System.out.println("sorry we have only " + KPK_Stack.size() + "records");
@@ -232,97 +256,28 @@ class Stack_Universities {
                     KPK_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(KPK_Stack.pop()).toString());
         }
     }
+    public static void Top_n_AJK_Universities(String province, int n) {
+        Add_keys_by_province(province);
+        if (n > AJK_Stack.size()) {
+            System.out.println("sorry we have only " + AJK_Stack.size() + " records");
+            n = AJK_Stack.size();
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(
+                    AJK_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(AJK_Stack.pop()).toString());
+        }
+    }
+    public static void Top_n_Gilgit_Universities(String province, int n) {
+        Add_keys_by_province(province);
+        if (n > GilgitB_Stack.size()) {
+            System.out.println("sorry we have only " + GilgitB_Stack.size() + " records");
+            n = GilgitB_Stack.size();
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(
+                    GilgitB_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(GilgitB_Stack.pop()).toString());
+        }
+    }
+
 
 }
-
-// public static void main(String[] args) {
-// Stack_Universities s=new Stack_Universities();
-// System.out.println("===============sindh");
-// s. Top_n_Sindh_Universities("sindh", 10);
-// // System.out.println("===============punjab");
-// // s. Top_n_Sindh_Universities("punjab", 5);
-// // System.out.println("===============bolichsitan");
-// // s. Top_n_Sindh_Universities("Balochistan", 5);
-// // System.out.println("===============kpk");
-// // s.Top_n_Sindh_Universities("KPK", 5);
-// // s.Top_n_Sindh_Universities();
-// // Add_keys_by_province("sindh");
-// // // s.Top_n_Sindh_Universities();
-// // Add_keys_by_province("punjab");
-// // // p.Top_n_Punjab_Universities();
-// // Add_keys_by_province("Balochistan");
-// // // b.Top_n_Balochistan_Universities();
-// // // k.Top_n_KPK_Universities();
-// // Add_keys_by_province("KPK");
-// }
-// public static void main(String[] args) {
-// Stack_Universities ss=new Stack_Universities();
-// while(sindh_Stack.size()!=0){
-// System.out.println(sindh_Stack.pop());
-// }
-// }
-// // private Node reverse_LinkedStack() {
-// // Node prev = null;
-// // Node current = this.top;
-// // Node next = null;
-// // while (current != null) {
-// // next = current.next;
-// // current.next = prev;
-// // prev = current;
-// // current = next;
-// // }
-// // this. top = prev;
-// // return top;
-
-// // }
-// public static void main(String[] args) {
-// Stack_Universities su=new Stack_Universities();
-// Stack_Universities su1=new Stack_Universities();
-// System.out.println("========= top=========");
-// // su.Add_uni_obj_into_stack_by_WorldRanked();
-// // System.out.println("========BOTTOM==========");
-// su.Bottom_n_UniversityBy("numberofpublication", 5);
-
-// }
-// }
-
-// public void Bottom_N_universities_by_publication(int n) {
-// int i = 0;
-// this.Add_uni_obj_into_stack_by_numberOfPublication();
-// this.reverse_LinkedStack();
-// while (i < n) {
-// System.out.println(this.peek() + " " +
-// ReadCsvFile.pakis_univ_HashTable.get(this.pop()));
-// i++;
-// }
-// }
-
-// public void Bottom_N_universities_by_rank(int n) {
-// int i = 0;
-// while (i < n) {
-// System.out.println(university_stack_Pakrank_array[i][0] + " "
-// +
-// ReadCsvFile.pakis_univ_HashTable.get(university_stack_Pakrank_array[i][0]));
-// i++;
-// }
-// }
-
-// public void Top_N_University_by_Publication(int n) {
-// int i = 0;
-// this.Add_uni_obj_into_stack_by_numberOfPublication();
-// while (i < n) {
-// System.out.println(this.peek() + " " +
-// ReadCsvFile.pakis_univ_HashTable.get(this.pop()));
-// i++;
-// }
-// }
-
-// public void Top_N_University_by_PakRank(int n) {
-// int i = 0;
-// this.Add_uni_obj_into_stack_by_PakRanked();
-// while (i < n) {
-// System.out.println(this.peek() + " = " +
-// ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
-// i++;
-// }
-// }
