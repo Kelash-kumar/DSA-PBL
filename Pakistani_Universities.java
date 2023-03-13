@@ -1,14 +1,10 @@
 
 public class Pakistani_Universities {
 
-    String Uni_Name;
-    int world_rank;
-    int asia_rank;
-    int pakistan_rank;
-    String city;
-    String province;
-    long Nubr_publication;
-    static boolean b = true;
+  protected  String Uni_Name,city,province;
+   protected int world_rank;
+    int asia_rank, pakistan_rank,Nubr_publication;
+   private static boolean b = true;
 
     Pakistani_Universities(String uni_name, int world_rank, int asia_rank, int pakistan_rank, String city,
             String province, int Nubr_publication) {
@@ -22,18 +18,12 @@ public class Pakistani_Universities {
     }
 
     public String toString() {
-        if (b)
-            System.out.println(String.format("%-10s%-40s%-20s%-20s%-20s%-20s%s", " Keys : ", " University Name ",
-                    " World Rank ", " Asia Rank ", "Pak-Rank", " City ", " Province ", " number Publication "));
-        b = false;
-        return "[ " + this.Uni_Name + "] [" + this.world_rank + "] [" + this.asia_rank
-                + "] [" + this.pakistan_rank + "] [" + this.city
-                + "] [" + this.province + "] [" + this.Nubr_publication + " ]";
-
-        // return String.format("%-40s%-20s%-20s%-20s%-20s%-20s%s", this.Uni_Name,
-        // this.world_rank, this.asia_rank,
-        // this.pakistan_rank, this.city, this.province, this.Nubr_publication);
+      
+        return " [" + this.Uni_Name + "]  [" + this.world_rank + "] [" + this.asia_rank
+                +"]  ["+ this.pakistan_rank + "] [" + this.city
+                +"] ["+ this.province + "] [" + this.Nubr_publication + "]";
+    }
 
     }
 
-}
+
