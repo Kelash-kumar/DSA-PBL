@@ -5,27 +5,27 @@ public class Problem_03 {
       Stack_Universities. Add_keys_by_province("sindh");
         int punjabPub = 0, sindhPub = 0, balPub = 0, kpkPub = 0, ajkPub = 0, gilgitPub = 0;
         for (int i = 1; i <= Stack_Universities.sindh_Stack.size(); i++)
-        sindhPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.sindh_Stack.pop())).Nubr_publication;
+        sindhPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.sindh_Stack.pop())).Nubr_publication;
         
         Stack_Universities. Add_keys_by_province("punjab");
         for (int i = 1; i <= Stack_Universities.punjab_Stack.size(); i++)
-        punjabPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.punjab_Stack.pop())).Nubr_publication;
+        punjabPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.punjab_Stack.pop())).Nubr_publication;
         
         Stack_Universities.  Add_keys_by_province("Balochistan");
         for (int i = 1; i <= Stack_Universities.Balochistan_Stack.size(); i++)
-        balPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.Balochistan_Stack.pop())).Nubr_publication;
+        balPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.Balochistan_Stack.pop())).Nubr_publication;
         
         Stack_Universities. Add_keys_by_province("KPK");
         for (int i = 1; i <= Stack_Universities.KPK_Stack.size(); i++)
-        kpkPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.KPK_Stack.pop())).Nubr_publication;
+        kpkPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.KPK_Stack.pop())).Nubr_publication;
         
         Stack_Universities.  Add_keys_by_province("AJK");
         for (int i = 1; i <= Stack_Universities.AJK_Stack.size(); i++)
-            ajkPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.AJK_Stack.pop())).Nubr_publication;
+            ajkPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.AJK_Stack.pop())).Nubr_publication;
             
             Stack_Universities.   Add_keys_by_province("Gilgit Biltistan");
             for (int i = 1; i <= Stack_Universities.GilgitB_Stack.size(); i++)
-            gilgitPub += (ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.GilgitB_Stack.pop())).Nubr_publication;
+            gilgitPub += (University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Stack_Universities.GilgitB_Stack.pop())).Nubr_publication;
 
         double avg1 = (double) sindhPub / Stack_Universities.sindh_Stack.size();
         double avg2 = (double) punjabPub / Stack_Universities.punjab_Stack.size();

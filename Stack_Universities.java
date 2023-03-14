@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 class Stack_Universities {
     Stack_Universities() {
-        ReadCsvFile.ReadCvs_File();
+        University_HashTable_to_ReadCsvFile.ReadCvs_File();
     }
 
     static String[][] university_stack_publication_array = new String[100][2];
@@ -53,8 +53,9 @@ class Stack_Universities {
             return "null";
         return top.data;
     }
+    
 
-    public void Add_uni_obj_into_stack_by_numberOfPublication() {
+    public  void Add_uni_obj_into_stack_by_numberOfPublication() {
         Arrays.sort(university_stack_publication_array,
                 Comparator.comparingInt((String[] q) -> Integer.parseInt(q[1])));
         for (int j = 0; j < university_stack_publication_array.length; j++) {
@@ -88,61 +89,6 @@ class Stack_Universities {
             this.push(university_stack_Pakrank_array[j][0]);
         }
     }
-
-    // // bottom traverse:
-    // public void Bottom_n_UniversityBy(String orderby, int n) {
-    //     if (orderby.equals("numberofpublication")) {
-    //         this.Add_uni_obj_into_stack_by_numberOfPublication();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(university_stack_publication_array[i][0] + " "
-    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_publication_array[i][0]));
-    //     } else if (orderby.equals("WorldRank")) {
-    //         this.Add_uni_obj_into_stack_by_WorldRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(university_stack_WorldRank_array[i][0] + " "
-    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_WorldRank_array[i][0]));
-
-    //     } else if (orderby.equals("AsiaRank")) {
-    //         this.Add_uni_obj_into_stack_by_AsiaRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(university_stack_AsiaRank_array[i][0] + " "
-    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_AsiaRank_array[i][0]));
-
-    //     } else if (orderby.equals("pakistanRank")) {
-    //         this.Add_uni_obj_into_stack_by_PakRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(university_stack_Pakrank_array[i][0] + " "
-    //                     + ReadCsvFile.pakis_univ_HashTable.get(university_stack_Pakrank_array[i][0]));
-    //     }
-
-    // }
-
-    // top traverse:
-    // public void Top_n_UniversityBy(String orderby, int n) {
-
-    //     if (orderby.equals("numberofpublication")) {
-    //         this.Add_uni_obj_into_stack_by_numberOfPublication();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(this.peek() + " " + ReadCsvFile.pakis_univ_HashTable.get(this.pop().toString()));
-    //     }
-
-    //     else if (orderby.equals("WorldRank")) {
-    //         this.Add_uni_obj_into_stack_by_WorldRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
-
-    //     } else if (orderby.equals("AsiaRank")) {
-    //         this.Add_uni_obj_into_stack_by_AsiaRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
-
-    //     } else if (orderby.equals("pakistanRank")) {
-    //         this.Add_uni_obj_into_stack_by_PakRanked();
-    //         for (int i = 0; i < n; i++)
-    //             System.out.println(this.peek() + " = " + ReadCsvFile.pakis_univ_HashTable.get(this.pop()).toString());
-    //     }
-
-    // }
 
     public static void Add_keys_by_province(String provience) {
         Main main = new Main();
@@ -216,7 +162,7 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(
-                    sindh_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(sindh_Stack.pop()).toString());
+                    sindh_Stack.peek() + "  " + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(sindh_Stack.pop()).toString());
         }
 
     }
@@ -229,7 +175,7 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(
-                    punjab_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(punjab_Stack.pop()).toString());
+                    punjab_Stack.peek() + "  " + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(punjab_Stack.pop()).toString());
         }
     }
 
@@ -241,7 +187,7 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(Balochistan_Stack.peek() + "  "
-                    + ReadCsvFile.pakis_univ_HashTable.get(Balochistan_Stack.pop()).toString());
+                    + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(Balochistan_Stack.pop()).toString());
         }
     }
 
@@ -253,7 +199,7 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(
-                    KPK_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(KPK_Stack.pop()).toString());
+                    KPK_Stack.peek() + "  " + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(KPK_Stack.pop()).toString());
         }
     }
     public static void Top_n_AJK_Universities(String province, int n) {
@@ -264,7 +210,7 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(
-                    AJK_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(AJK_Stack.pop()).toString());
+                    AJK_Stack.peek() + "  " + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(AJK_Stack.pop()).toString());
         }
     }
     public static void Top_n_Gilgit_Universities(String province, int n) {
@@ -275,9 +221,17 @@ class Stack_Universities {
         }
         for (int i = 0; i < n; i++) {
             System.out.println(
-                    GilgitB_Stack.peek() + "  " + ReadCsvFile.pakis_univ_HashTable.get(GilgitB_Stack.pop()).toString());
+                    GilgitB_Stack.peek() + "  " + University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(GilgitB_Stack.pop()).toString());
         }
     }
-
-
+// this method is used for percentile of uiversity
+    public  void Percentile_50th_University(){
+        Stack_Universities s=new Stack_Universities();
+     s.Add_uni_obj_into_stack_by_numberOfPublication();
+     int fifth_percentile=s.size()/2;
+     while(s.size()!=fifth_percentile){
+s.pop();
+     }
+     System.out.println(s.peek()+" " +University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(s.peek()).toString());
+    }
 }

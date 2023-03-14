@@ -1,8 +1,9 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    Main() { ReadCsvFile.add_Keys_by_province();}
+    Main() { University_HashTable_to_ReadCsvFile.add_Keys_by_province();}
 
     static ArrayList<String> Sindh = new ArrayList<>();
     static ArrayList<String> Punjab = new ArrayList<>();
@@ -12,29 +13,33 @@ public class Main {
     static ArrayList<String> Gilgit = new ArrayList<>();
     
     public static void main(String[] args) {
-        Problem_02 prblm2=new Problem_02();
+        
         Scanner sc = new Scanner(System.in);
         while(true){
         System.out.println("\n\n\n == >  Enter your choice <== ");
         System.out.println(
-                " 1. search A university by providing (key) \n 2.  Top n universties with orderby \n 3. Bottom n University with orderBy   \n 4.  See provincial ranking of the universities \n 5. Best And Worst Performance \n 6.Exit ");
+                " 1. Search A university by providing (key) \n 2. Top n universties with orderby \n 3. Bottom n University with orderBy   \n 4. 50th percentile \n 5. Best And Worst Performance \n 6. See provincial ranking of the universities \n 7. Exit ");
         int input = sc.nextInt();
 
         switch (input) {
             case 1: {
+                new University_HashTable();
+                new Stack_Universities();
                 System.out.println("Enter the KEY of university you searched for :");
                 String str = sc.nextLine();
                 str = sc.nextLine();
                 System.out.println(
-                        ReadCsvFile.pakis_univ_HashTable.get(str).toString());
+                        University_HashTable_to_ReadCsvFile.pakis_univ_HashTable.get(str).toString());
                 break;
             }
 
             case 2: {
+                Problem_02 prblm2=new Problem_02();
+                while(true){
                 System.out.println("Enter (n)  HowMany TOP  University data You Searched :");
                 int i = sc.nextInt();
                 System.out.println("Enter on what basis : your choice");
-                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. World rank \n 4. Asia Rank");
+                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. World rank \n 4. Asia Rank \n 5.Exit ");
                 int orderby = sc.nextInt();
 
                 switch (orderby) {
@@ -54,20 +59,26 @@ public class Main {
                         prblm2.Top_n_UniversityBy("AsiaRank", i);
                         break;
                     }
+                    case 5:{
+                        System.exit(0);
+                    }
                     default: {
                         System.out.println("wrong input ");
                         break;
                     }
                 }
+                break;
+                }
 
             }
-                break;
-
+break;
             case 3: {
+                Problem_02 prblm2=new Problem_02();
+                while(true){
                 System.out.println("Enter (n)  HowMany Bottom  University data You Searched :");
                 int i = sc.nextInt();
                 System.out.println("Enter on what basis : your choice");
-                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. Word rank \n 4. Asia Rank");
+                System.out.println(" 1. numberofpublication \n 2. pakistan Rank \n 3. Word rank \n 4. Asia Rank \n 5. Exit");
                 int orderby = sc.nextInt();
 
                 switch (orderby) {
@@ -87,6 +98,7 @@ public class Main {
                         prblm2.Bottom_n_UniversityBy("AsiaRank", i);
                         break;
                     }
+                    case 5:{System.exit(0);}
                     default: {
                         System.out.println("wrong input ");
                         break;
@@ -94,7 +106,18 @@ public class Main {
                 }
                 break;
             }
+            }
+            break;
             case 4: {
+                Stack_Universities s1=new Stack_Universities();
+                s1.Percentile_50th_University();
+                break;
+            }
+            case 5: {
+                System.out.println("\n"+Problem_03. performance());
+                break;
+            }
+            case 6:{
                 System.out.println("Enter (n)  HowMany Top  University data You Searched by provinced wise :");
                 int i = sc.nextInt();
                 System.out.println("Enter on what province basis : your choice");
@@ -106,16 +129,19 @@ public class Main {
                     case 1: {
                         Stack_Universities.Top_n_Sindh_Universities("sindh", i);
                         System.exit(0);
+           
                         break;
                     }
                     case 2: {
                         Stack_Universities.Top_n_Punjab_Universities("punjab", i);
                         System.exit(0);
+                  
                         break;
                     }
                     case 3: {
                         Stack_Universities.Top_n_Balochistan_Universities("Balochistan", i);
                         System.exit(0);
+                
                         break;
                     }
                     case 4: {
@@ -141,11 +167,9 @@ public class Main {
 
                 break;
             }
-            case 5: {
-                System.out.println("\n"+Problem_03. performance());
-                break;
+            case 7:{
+                System.exit(0);
             }
-            case 6:{System.exit(0);}
             default: {
                 System.out.println("not exist");
                 break;
